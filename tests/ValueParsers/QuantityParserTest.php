@@ -126,6 +126,7 @@ class QuantityParserTest extends StringValueParserTest {
 			'100003 m³' => QuantityValue::newFromNumber( 100003, 'm³', 100004, 100002 ),
 			'3.±-0.2µ' => QuantityValue::newFromNumber( '+3', 'µ', '+3.2', '+2.8' ),
 			'+00.20 Å' => QuantityValue::newFromNumber( '+0.20', 'Å', '+0.21', '+0.19' ),
+			'1 http://unit' => QuantityValue::newFromNumber( '+1', 'http://unit', '+2', '+0' ),
 		);
 
 		$argLists = array();
@@ -185,6 +186,15 @@ class QuantityParserTest extends StringValueParserTest {
 
 			'100 003',
 			'1 . 0',
+
+			'1 2',
+			'1 2 http://unit',
+			'1 m http://unit',
+			'1m http://unit',
+			'1http://unit',
+			'1 ftp://unit',
+			'1 mailto:unit',
+			'1 //unit',
 		);
 
 		foreach ( $invalid as $value ) {

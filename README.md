@@ -56,6 +56,9 @@ DataValues Number has been written by Daniel Kinzler, as [Wikimedia Germany]
 * Removed deprecated `QuantityUnitFormatter` interface.
 * Removed deprecated `BasicQuantityUnitFormatter`.
 
+#### Additions
+* `QuantityParser` now accepts URIs as units.
+
 ### 0.6.0 (2015-09-09)
 
 #### Breaking changes
